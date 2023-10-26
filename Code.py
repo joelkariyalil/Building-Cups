@@ -6,7 +6,7 @@ parser.add_argument('--value', required=True, help="Enter the Cups (No.): ")
 args = parser.parse_args()
 n=int(args.value)
 '''
-n=10000
+n=100011
 #making small changes to the code
 
 #Calculating the Roots using the Quadratic Equation
