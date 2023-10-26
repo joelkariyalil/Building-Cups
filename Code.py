@@ -7,6 +7,7 @@ args = parser.parse_args()
 n=int(args.value)
 '''
 n=10000
+#making small changes to the code
 
 #Calculating the Roots using the Quadratic Equation
 a=1;b=1;c=-2*n
