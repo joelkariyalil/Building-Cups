@@ -1,10 +1,12 @@
 import math
 import argparse
-
+'''
 parser = argparse.ArgumentParser(description="Server-Client Program")
 parser.add_argument('--value', required=True, help="Enter the Cups (No.): ")
 args = parser.parse_args()
 n=int(args.value)
+'''
+n=10000
 
 #Calculating the Roots using the Quadratic Equation
 a=1;b=1;c=-2*n
