@@ -15,22 +15,24 @@
             return;
         }
 
-        // Call the Flask API to calculate the result
-        const response = await fetch('http://localhost:5000/calculate_pyramid', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ totalCups }),
-        });
+        // Perform the calculation
+        let a = 1;
+        let b = 1;
+        let c = -2 * totalCups;
+        let d = Math.pow(b, 2) - (4 * a * c);
+        let sol1 = (-b - Math.sqrt(d)) / (2 * a);
+        let sol2 = (-b + Math.sqrt(d)) / (2 * a);
 
-        console.log('Response:', response);
+        // Discarding the Negative Values
+        let ans = Math.floor(sol2 < 0 ? sol1 : sol2);
+        let val = (ans * (ans + 1)) / 2;
 
-        if (!response.ok) {
-            throw new Error('Failed to calculate the result.');
-        }
-
-        const resultData = await response.json();
+        // Prepare the result data
+        let resultData = {
+            'baseCups': ans,
+            'usedCups': val,
+            'remainingCups': totalCups - val
+        };
 
         // Display the result with animation
         resultElement.innerHTML =
